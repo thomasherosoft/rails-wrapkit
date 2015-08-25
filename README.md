@@ -1,4 +1,3 @@
-# EcoEnergy #
 Management System
 
 ## Introduction ##
@@ -112,7 +111,3 @@ Credits
 -------
 
 For information about the source please contact:
-
-Troy Martin
-Chief Technology Officer
-Devato Inc.
