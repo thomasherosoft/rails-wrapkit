@@ -1,0 +1,41 @@
+.panel-datatable.panel.panel-default
+  %section.customer-page-table
+    .row
+      .col-md-12
+        %table.table.customer-page-table
+          %thead
+            %tr
+              %th
+                = t('customer.billing.bill_period')
+              %th
+                = t('customer.billing.bill_date')
+              %th
+                = t('customer.billing.billed_amount')
+              %th
+                = t('customer.billing.tax_amount')
+              %th
+                = t('customer.billing.net_amount')
+              %th
+                = t('customer.billing.status')
+          %tbody
+            %tr
+              %td 2015-04-13 to 2015-04-24
+              %td 2015-04-28
+              %td $124.95
+              %td $16.24
+              %td $141.19
+              %td PENDING
+            %tr
+              %td 2015-04-13 to 2015-04-24
+              %td 2015-04-28
+              %td $124.95
+              %td $16.24
+              %td $141.19
+              %td PAID
+            %tr
+              %td 2015-04-13 to 2015-04-24
+              %td 2015-04-28
+              %td $124.95
+              %td $16.24
+              %td $141.19
+              %td PAID

@@ -1,0 +1,84 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  hello: "Hello world"
+  agent:
+    first_name: First Name
+    last_name: Last Name
+    address: Address
+    city: City
+    postal_code: Postal Code
+    province: Province
+    country: Contry
+    home_phone: Home Phone
+    mobile_phone: Mobile Phone
+    email: Email
+    sin_code: 'Sin#'
+    personal: Personal
+    agent_details: Agent Details
+    overrides: Overrides
+    contact: Contact
+    agent: Agent
+    agent_number: Agent#
+    team_lead: Team Lead
+    manager: Manager
+    distributor: Distributor
+    gst: GST#
+    payment_method: Payment Method
+    bin: "BIN # (if applicable)"
+    pre_inspector: Pre-Inspector
+    active: Active
+    agent_update:
+      toastr_success: Successfully updated agent
+  customer:
+    overview: Overview
+    verification: Verification
+    service: Service
+    billing_b: Billing
+    history: History
+    first_name: First Name
+    last_name: Last Name
+    street_number: "#Street"
+    address: "Address"
+    street_type: "Street Type"
+    misc: "Misc."
+    city: City
+    postal_code: Postal Code
+    province: Province
+    country: Contry
+    home_phone: Home Phone
+    mobile_phone: Mobile Phone
+    email: Email
+    billing:
+      billing_table: Billing Table
+      billing_submission: Billing Submission
+      ajustments: Adjustments
+      rebate: Rebate
+      bill_period: BILL PERIOD
+      bill_date: BILL DATE
+      billed_amount: BILLED AMOUNT
+      tax_amount: TAX AMOUNT
+      net_amount: NET AMOUNT
+      status: STATUS
+    customer_update:
+      toastr_success: Successfully updated customer
+

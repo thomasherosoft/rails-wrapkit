@@ -1,0 +1,20 @@
+.row.tab-custom
+  %ul#agent_info.nav.nav-tabs.ul-custom
+    %li.active
+      %a{"data-toggle" => "tab", :href => "#personal"} Personal
+    %li
+      %a{"data-toggle" => "tab", :href => "#agent_details"} Agent Details
+    %li
+      %a{"data-toggle" => "tab", :href => "#ovverides"} Overrides
+    %li
+      %a{"data-toggle" => "tab", :href => "#contact"} Contact
+
+  .tab-content
+    #personal.tab-pane.active
+      = render "independent_contractors/tabs/personal"
+    #agent_details.tab-pane
+      = render "independent_contractors/tabs/agent_details"
+    #ovverides.tab-pane
+      cc...
+    #contact.tab-pane
+      ff...

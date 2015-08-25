@@ -1,0 +1,25 @@
+.row.tab-custom
+  %ul#biling_info.nav.nav-tabs.ul-custom
+    %li.active
+      %a{"data-toggle" => "tab", :href => "#billing_table"}
+        = t('customer.billing.billing_table')
+    %li
+      %a{"data-toggle" => "tab", :href => "#billing_submission"}
+        = t('customer.billing.billing_submission')
+    %li
+      %a{"data-toggle" => "tab", :href => "#adjustments"}
+        = t('customer.billing.ajustments')
+    %li
+      %a{"data-toggle" => "tab", :href => "#rebate"}
+        = t('customer.billing.rebate')
+
+  .tab-content
+    #billing_table.tab-pane.active
+      = render 'billing_table'
+    #billing_submission.tab-pane
+      bb..
+    #adjustments.tab-pane
+      cc...
+    #rebate.tab-pane
+      ff...
+

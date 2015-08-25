@@ -1,0 +1,20 @@
+%section.content-wrapper
+  - title "Promotions"
+  / - content_for :page_actions do
+  /   %a.btn.btn-primary.btn-sm{href: new_marketing_document_path, data: {behavior: "new-marketing-document"}}
+  /     %i.fa.fa-plus.fa-fw
+  /     Add New Document
+  = render "shared/header"
+
+  .content
+    .help-block.text-center
+      = render "marketing_tab_row"
+    %hr
+    %section.agent-info
+      .row
+        / = render 'details'
+
+        / = render 'products_table'
+    %hr
+
+    / = render 'customer_info'

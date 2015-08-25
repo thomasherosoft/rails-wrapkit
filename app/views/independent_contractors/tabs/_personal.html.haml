@@ -1,0 +1,44 @@
+.panel-datatable.panel.panel-default
+  .row.form-group
+    .col-lg-8
+      -#= simple_form_for @ic do |f|
+      -#  .row
+      -#    .col-lg-6
+      -#      = f.input :first_name, :label => t('agent.first_name')
+      -#    .col-lg-6
+      -#      = f.input :last_name, :label => t('agent.last_name')
+      -#  .row
+      -#    .col-lg-8
+      -#      = f.input :address, :label => t('agent.address')
+      -#    .col-lg-4
+      -#      = f.input :city, :label => t('agent.city')
+      -#  .row
+      -#    .col-lg-4
+      -#      = f.input :postal_code, :label => t('agent.postal_code')
+      -#    .col-lg-4
+      -#      = f.input :province, :label => t('agent.province')
+      -#    .col-lg-4
+      -#      = f.input :country,  :label => t('agent.country')
+      -#  .row
+      -#    .col-lg-6
+      -#      = f.input :home_phone, :label => t('agent.home_phone')
+      -#    .col-lg-6
+      -#      = f.input :mobile, :label => t('agent.mobile_phone')
+      -#  .row
+      -#    .col-lg-12
+      -#      = f.input :email, :label => t('agent.email')
+      -#  .row
+      -#    .col-lg-12
+      -#      = f.input :sin_number, :label => t('agent.sin_code')
+
+    -#.col-md-4
+    -#  %form#libraryDropzone.dropzone{:action => badged_image_upload_agent_path(@ic, format: :json)}
+    -#    = hidden_field_tag :authenticity_token, form_authenticity_token
+    -#    = image_tag @ic.badge_image.url(:thumb), class: 'server_image'
+
+  %hr
+  .row
+    .col-md-2
+      = button_tag( :class => "form-control btn btn-primary") do
+        %span Update Agent
+        %i.fa.fa-spinner.fa-spin.hidden

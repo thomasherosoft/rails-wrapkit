@@ -1,0 +1,92 @@
+.agent-badge-image {
+  text-align: center;
+  img {
+    max-width: 100%;
+    max-height: 300px;
+  }
+}
+
+.icon-header {
+ text-align: right;
+  i {
+    font-size:25px;
+  }
+}
+.overview-row {
+  padding:10px 0px;
+}
+.status-icon{
+  font-size:40px;
+  color: #95a5a6;
+  &.active {
+    color: #59b956;
+  }
+}
+.panel-main {
+  min-height: 400px;
+}
+
+.main-button {
+  &.active {
+    color: #f6f8fa;
+    background: #3e5771;
+    i {
+      color: #f6f8fa;
+    }
+  }
+}
+
+section.agent-info {
+  .agent-status {
+    p.status-text {
+      font-size: 11px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+}
+
+section.overview-stats {
+  .overview-icon {
+    font-size: 40px;
+  }
+
+  h5.overview-large-text {
+    font-size: 55px;
+    padding: 0;
+    margin: 0;
+  }
+  h4 {
+    font-size: 20px;
+  }
+}
+
+section.latest-deals{
+  h2.section-header{
+    text-align: center;
+    text-transform: uppercase;
+  }
+  table.latest-deals {
+    thead {
+      background: #f7f7f8;
+      border-top: 1px solid #e6e7e7;
+    }
+    th, td {
+      padding:10px 0;
+    }
+  }
+}
+
+body.agents.stats {
+  .smaller-font{
+    font-size: 27px;
+    line-height: 60px;
+  }
+  .panel-body {
+    &.complaints {
+      min-height: 350px;
+    }
+  }
+}
+
+

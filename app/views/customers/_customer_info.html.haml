@@ -1,0 +1,17 @@
+.row.tab-custom
+  %ul#customer_info.nav.nav-tabs.ul-custom
+    %li.active
+      %a{"data-toggle" => "tab", :href => "#personal"} Personal
+    %li
+      %a{"data-toggle" => "tab", :href => "#financial"} Financial
+    %li
+      %a{"data-toggle" => "tab", :href => "#additional"} Additional
+
+  .tab-content
+    #personal.tab-pane.active
+      = render 'personal_form'
+    #financial.tab-pane
+      bb..
+    #additional.tab-pane
+      cc...
+

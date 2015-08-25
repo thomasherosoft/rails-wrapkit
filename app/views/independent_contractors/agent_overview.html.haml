@@ -1,0 +1,136 @@
+%section.content-wrapper
+  - title "Agent Overview"
+  = render "shared/header"
+  .content
+    .help-block.text-center
+      = render "agent_tab_row"
+    %hr
+
+    %section.agent-info
+      .row
+        .col-md-8
+          .panel.panel-default.panel-main
+            .panel-body
+              %span.agent-status.pull-right
+                / %i.fa.status-icon.fa-border{class: @agent.active ? "active fa-user" : "fa-user-times" }
+                %p.status-text
+                  / = @agent.active ? "active" : "inactive"
+              %h3.panel-h3
+                / = @agent.full_name
+              .clearfix
+
+              %address
+                .row
+                  .col-md-1.icon-header
+                    %i.fa.fa-home
+                  .col-md-11
+                    / = @agent.address.try(:titleize) || 'N/A'
+                    %br
+                    / = (@agent.city.try(:titleize) || 'N/A') + ", " + (@agent.province.try(:titleize) || 'N/A')
+                    %br
+                    / = @agent.postal_code.try(:upcase) || 'N/A'
+                %br
+                .row
+                  .col-md-1.icon-header
+                    %i.fa.fa-phone
+                  .col-md-11
+                    / = @agent.home_phone || 'N/A'
+                .row
+                  .col-md-1.icon-header
+                    %i.fa.fa-phone-square
+                  .col-md-11
+                    / = @agent.mobile
+                .row
+                  .col-md-1.icon-header
+                    %i.fa.fa-envelope-o
+                  .col-md-11
+                    / = @agent.email
+                %br
+                .row
+                  .col-md-1.icon-header
+                    %i.fa.fa-tag
+                  .col-md-11
+                    {Sales Distributor}
+                .row
+                  .col-md-1.icon-header
+                    %i.fa.fa-tag
+                  .col-md-11
+                    {Sales Office}
+                .row
+                  .col-md-1.icon-header
+                    %i.fa.fa-tag
+                  .col-md-11
+                    {Team Leader}
+
+
+        .col-md-4.agent-badge-image
+          .panel.panel-default
+            .panel-body
+              = image_tag "https://placeimg.com/600/600/tech"
+              %h4.text-center Badged on 07/07/2015
+
+    %hr
+
+    %section.overview-stats
+      .row.overview-data
+        .col-xs-3.bordered-right
+          %i.fa.fa-calendar.fa-border.overview-icon.pull-left.icon-blue
+          %h5.overview-large-text.pull-left 184
+          .clearfix
+          %h4.text-muted DAYS SINCE LAST DEAL
+
+        .col-xs-3.bordered-right
+          %i.fa.fa-flag.fa-border.overview-icon.pull-left.icon-red
+
+          %h5.overview-large-text.pull-left 3
+          .clearfix
+          %h4.text-muted COMPLAINTS
+
+        .col-xs-3.bordered-right
+          %i.fa.fa-check.fa-border.overview-icon.pull-left.icon-green
+
+          %h5.overview-large-text.pull-left 184
+          .clearfix
+          %h4.text-muted INSTALLS
+
+        .col-xs-3
+          %i.fa.fa-dot-circle-o.fa-border.overview-icon.pull-left.icon-light-blue
+
+          %h5.overview-large-text.pull-left 61%
+          .clearfix
+          %h4.text-muted INSTALL RATE
+        / /.cols
+        .clearfix
+
+    %hr
+
+    %section.latest-deals
+      .row
+        .col-md-12
+          %h2.section-header Latest Deals
+      .row
+        .col-md-12
+          %table.table.latest-deals
+            %thead
+              %tr
+                %th #
+                %th First Name
+                %th Last Name
+                %th Username
+            %tbody
+              %tr
+                %td 1
+                %td Mark
+                %td Otto
+                %td @mdo
+              %tr
+                %td 2
+                %td Jacob
+                %td Thornton
+                %td @fat
+              %tr
+                %td 3
+                %td Larry
+                %td the Bird
+                %td @twitter
+

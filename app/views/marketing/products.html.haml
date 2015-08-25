@@ -1,0 +1,95 @@
+%section.content-wrapper
+  - title "Products"
+  / - content_for :page_actions do
+  /   %a.btn.btn-primary.btn-sm{href: new_marketing_document_path, data: {behavior: "new-marketing-document"}}
+  /     %i.fa.fa-plus.fa-fw
+  /     Add New Document
+  = render "shared/header"
+
+  .content
+    .help-block.text-center
+      = render "marketing_tab_row"
+    %hr
+    %section.agent-info
+      .row
+        .col-md-6
+          .panel.panel-default
+            .panel-heading
+              / .panel-actions-input
+              /   %a.btn.btn-default.btn-sm{:href => "#"} View all orders
+              %h3.panel-title Products
+            .panel-body
+              %table.table.latest-deals
+                %thead
+                  %tr
+                    %th Supplier
+                    %th Sub Type
+                    %th Product
+                %tbody
+                  %tr{data: {href: "#"}}
+                    %td Supplier
+                    %td {Sub Type}
+                    %td {Product}
+                  %tr{data: {href: "#"}}
+                    %td Goodman
+                    %td Furnace
+                    %td GMVC96
+                  %tr{data: {href: "#"}}
+                    %td Goodman
+                    %td AC
+                    %td GSX16
+        .col-md-6
+          .panel.panel-default
+            .panel-heading
+              .panel-actions-input
+                %a.btn.btn-primary.btn-sm{:href => "#"} NEW PRODUCT
+              %h3.panel-title Details
+            .panel-body
+              %h2 {PRODUCT}
+              %h4.sub-heading {SUBTYPE}, {TYPE}
+              .row
+                .col-sm-4{style: "padding-top:10px;"}
+                  Install Required
+                  / %br/
+                  / %small
+                  /   %i with feedback state if not found any suggest
+                .col-sm-8
+                  .checkbox
+                    %label
+                      %input{:checked => "checked", :name => "checkboxes", :type => "checkbox", :value => "1"}
+              .row
+                .col-sm-4{style: "padding-top:10px;"}
+                  Install Duration
+                  / %br/
+                  / %small
+                  /   %i with feedback state if not found any suggest
+                .col-sm-8
+                  %select#inputSelect.form-control
+                    %option - Select One -
+                    %option 1
+                    %option 2
+                    %option 3
+                    %option 4
+                    %option 5
+              .row
+                .col-sm-4{style: "padding-top:10px;"}
+                  Supplier
+                  / %br/
+                  / %small
+                  /   %i with feedback state if not found any suggest
+                .col-sm-8
+                  %h4 Goodman
+              .row
+                .col-sm-12{style: "padding-top:10px;"}
+                  NOTES:
+                  %br
+                  %textarea#inputTextarea.form-control{:placeholder => "Placeholder", :rows => "3"}
+              %hr
+              .row
+                .col-sm-12.text-right
+                  .form-group
+                    %button.btn.btn-primary{:type => "submit"} UPDATE
+
+    %hr
+
+    / = render 'customer_info'

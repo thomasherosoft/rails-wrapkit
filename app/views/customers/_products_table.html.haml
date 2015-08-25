@@ -1,0 +1,20 @@
+.col-md-6.agent-badge-image
+  .panel.panel-default
+    .panel-body
+      %table.table.customer-products-table
+        %thead.grey-header
+          %tr
+            %th Products
+            %th Date
+            %th Agents
+        %tbody
+        - @customer.product_details.limit(3).each do |details|
+
+          %tr
+            %td
+              %small
+                = details.product.product_type.name
+                %br
+                = details.product.name
+            %td= details.purchase_date
+            %td= details.customer.lead_booker

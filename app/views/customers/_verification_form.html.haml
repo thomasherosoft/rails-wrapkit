@@ -1,0 +1,57 @@
+.col-md-12
+  .panel.panel-default.panel-main
+    .panel-body
+      .row
+        .col-md-12
+          %h3.panel-h3
+            Verification Script Selection
+      .row
+        .col-md-3
+          Age
+          .radio
+            %label
+              %input{ :type => "radio", :value => "option1"}
+              70+
+          .radio
+            %label
+              %input{ :type => "radio", :value => "option1"}
+              under 70
+        .col-md-3
+          Territory
+          .radio
+            %label
+              %input{ :type => "radio", :value => "option1"}
+              Enbridge
+          .radio
+            %label
+              %input{ :type => "radio", :value => "option1"}
+              PAD
+          .radio
+            %label
+              %input{ :type => "radio", :value => "option1"}
+              Credit Card
+          .radio
+            %label
+              %input{ :type => "radio", :value => "option1"}
+              Standard Billing
+        .col-md-3
+          Product
+          .radio
+            %label
+              %input{ :type => "radio", :value => "option1"}
+              HVAC
+          .radio
+            %label
+              %input{ :type => "radio", :value => "option1"}
+              WH Rollback
+          .radio
+            %label
+              %input{ :type => "radio", :value => "option1"}
+              HVAC Rollback
+        .col-md-3
+          %select.form-control
+            %option.selected Choose Verification Script
+            %option Enbridge - HVAC
+            %option Union - HVAC
+            %option Enbridge - HVAC - Senior Script
+    %hr

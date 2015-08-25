@@ -1,0 +1,27 @@
+= link_to overview_customer_path(@customer), class: "btn-call main-button #{'active' if current_page?(overview_customer_path(@customer))}" do
+  %i.fa.fa-bar-chart-o
+  %br/
+  %span
+    = t('customer.overview')
+= link_to verification_customer_path(@customer), class: "btn-call main-button #{'active' if current_page?(verification_customer_path(@customer))}" do
+  %i.fa.fa-bar-chart-o
+  %br/
+  %span
+    = t('customer.verification')
+= link_to service_customer_path(@customer), class: "btn-call main-button #{'active' if current_page?(service_customer_path(@customer))}" do
+  %span.badge.badge-success
+  %i.fa.fa-bar-chart-o
+  %br/
+  %span
+    = t('customer.service')
+= link_to billing_customer_path(@customer), class: "btn-call main-button #{'active' if current_page?(billing_customer_path(@customer))}" do
+  %i.fa.fa-bar-chart-o
+  %br/
+  %span
+    = t('customer.billing_b')
+= link_to history_customer_path(@customer), class: "btn-call main-button #{'active' if current_page?(history_customer_path(@customer))}" do
+  %span.badge.badge-warning
+  %i.fa.fa-bar-chart-o
+  %br/
+  %span
+    = t('customer.history')

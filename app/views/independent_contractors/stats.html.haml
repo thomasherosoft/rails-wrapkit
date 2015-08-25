@@ -1,0 +1,75 @@
+%section.content-wrapper
+  - title "Agent Statistics"
+  = render "shared/header"
+  .content
+    .help-block.text-center
+      = render "agent_tab_row"
+    %hr
+
+    %section.overview-stats
+      .row.overview-data
+        .col-xs-3.bordered-right
+          %i.fa.fa-pencil-square-o.fa-border.overview-icon.pull-left.icon-green
+          %h5.overview-large-text.pull-left 38
+          .clearfix
+          %h4.text-muted SALES
+
+        .col-xs-3.bordered-right
+          %i.fa.fa-pencil-square-o.fa-border.overview-icon.pull-left.icon-green
+
+          %h5.overview-large-text.pull-left 16
+          .clearfix
+          %h4.text-muted INSTALLS
+
+        .col-xs-3.bordered-right
+          %i.fa.fa-calendar.fa-border.overview-icon.pull-left.icon-blue
+
+          %h5.overview-large-text.pull-left.smaller-font 2015/01/25
+          .clearfix
+          %h4.text-muted DATE OF FIRST SALES
+
+        .col-xs-3
+          %i.fa.fa-calendar.fa-border.overview-icon.pull-left.icon-blue
+
+          %h5.overview-large-text.pull-left 3
+          .clearfix
+          %h4.text-muted DAYS SINCE LAST DEAL
+        / /.cols
+        .clearfix
+      .row.overview-data
+        .col-xs-3.bordered-right
+          %i.fa.fa-flag.fa-border.overview-icon.pull-left.icon-red
+          %h5.overview-large-text.pull-left 4
+          .clearfix
+          %h4.text-muted RANK IN DISTRIBUTOR
+
+        .col-xs-3
+          %i.fa.fa-flag.fa-border.overview-icon.pull-left.icon-red
+
+          %h5.overview-large-text.pull-left 23
+          .clearfix
+          %h4.text-muted RANK IN COMPANY
+
+      %hr
+      .row.overview-data
+        .col-lg-6
+          .panel.panel-default
+            .panel-body
+              %h4.text-muted PRODUCTIVITY
+              %i.fa.fa-dot-circle-o.fa-border.overview-icon.pull-left.icon-blue
+              %h5.overview-large-text.pull-left 61%
+              .clearfix
+              %h4.text-muted INSTALLS / VERIFIED
+              %i.fa.fa-dot-circle-o.fa-border.overview-icon.pull-left.icon-blue
+              %h5.overview-large-text.pull-left 61%
+              .clearfix
+              %h4.text-muted VERIFIED / TOTAL SALES
+              %i.fa.fa-dot-circle-o.fa-border.overview-icon.pull-left.icon-blue
+              %h5.overview-large-text.pull-left 61%
+              .clearfix
+              %h4.text-muted CANCEL RATE
+
+        .col-lg-6
+          .panel.panel-default
+            .panel-body.complaints
+              %h4.text-muted COMPLAINTS

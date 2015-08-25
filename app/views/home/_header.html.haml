@@ -1,0 +1,61 @@
+.content-header
+  .pull-right.hidden-xs
+    %button#dashboardRange.btn.btn-sm.btn-icon.btn-icon-left.btn-ascon.pull-right
+      %i.fa.fa-calendar
+      %span Please select Date Range
+      %b.fa.fa-angle-down
+  %h1.content-title Dashboard
+/ /.content-header
+.content-actions
+  .pull-right
+    %a.btn.btn-default.btn-sm{:href => "#"}
+      %i.fa.fa-plus.fa-fw
+      Widgets
+  %a.btn.btn-default.btn-sm{:href => "#"}
+    %i.fa.fa-envelope-o.fa-fw
+    Email
+  .btn-group
+    %a.btn.btn-default.btn-sm.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+      %i.fa.fa-share-alt.fa-fw
+      Share
+      %span.fa.fa-angle-down
+    %ul.dropdown-menu
+      %li
+        %a{:href => "#"}
+          %i.fa.fa-group.fa-fw
+          Share to Group
+      %li
+        %a{:href => "#"}
+          %i.fa.fa-link.fa-fw
+          Share the Link
+      %li
+        %a{:href => "#"}
+          %i.fa.fa-rss.fa-fw
+          Share to Timeline
+      %li.divider
+      %li
+        %a{:href => "#"} More Actions
+  / /.btn-group
+  .btn-group
+    %a.btn.btn-default.btn-sm.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+      %i.fa.fa-download.fa-fw
+      Exports
+      %span.fa.fa-angle-down
+    %ul.dropdown-menu
+      %li
+        %a{:href => "#"}
+          %i.fa.fa-file-excel-o.fa-fw
+          Excel
+      %li
+        %a{:href => "#"}
+          %i.fa.fa-file-image-o.fa-fw
+          Image
+      %li
+        %a{:href => "#"}
+          %i.fa.fa-file-pdf-o.fa-fw
+          PDF
+      %li.divider
+      %li
+        %a{:href => "#"} More Actions
+  / /.btn-group
+/ /.content-actions

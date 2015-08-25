@@ -1,0 +1,4 @@
+.btn-group{"aria-label" => "ic-actions", :role => "group"}
+  %a.btn.btn-default.btn-sm{href: independent_contractor_path(ic)} View
+  / %a.btn.btn-default.btn-sm{href: edit_agent_path(agent)} Edit
+  = link_to "Delete", independent_contractor_path(ic), method: :delete, data: { confirm: 'Are you certain you want to delete this?' }, class: "btn btn-default btn-sm"

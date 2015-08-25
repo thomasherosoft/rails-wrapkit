@@ -1,0 +1,634 @@
+- content_for :head do
+  = javascript_include_tag "theme/demo/dashboard-demo.js"
+
+%section.content-wrapper
+  = render "home/header"
+  .content
+    .help-block.text-center
+      %a.btn-call.active{:href => "#"}
+        %i.fa.fa-bar-chart-o
+        %br/
+        %span Resume
+      %a.btn-call{:href => "#"}
+        %i.fa.fa-envelope
+        %br/
+        %span Email
+      %a.btn-call{:href => "#"}
+        %span.badge.badge-success 16
+        %i.fa.fa-users
+        %br/
+        %span New Users
+      %a.btn-call{:href => "#"}
+        %i.fa.fa-edit
+        %br/
+        %span Contents
+      %a.btn-call{:href => "#"}
+        %span.badge.badge-warning 142
+        %i.fa.fa-map-marker
+        %br/
+        %span Timeline
+      %a.btn-call{:href => "#"}
+        %i.fa.fa-heart
+        %br/
+        %span Popularity
+    / /END OF SHORTCUT/TABS MENU
+    / RESUME CHARTS
+    .row
+      .col-md-6.text-center{:style => "margin-top:60px"}
+        .easy-pie-chart
+          .easyPieChart{"data-barcolor" => "#107360", "data-linewidth" => "6", "data-percent" => "75", "data-rotate" => "180", "data-scalecolor" => "false", "data-size" => "120"}
+            .easyPieChart-inner
+              %strong 2,724
+              %small.text-muted Visitors
+          %p
+            %i.fa.fa-caret-up.fa-fw.text-success{"data-context" => "success", :rel => "tooltip", :title => "Greater than last month"}
+            Target 3,000
+        / /.easy-pie-chart
+        .easy-pie-chart
+          .easyPieChart{"data-barcolor" => "#20638F", "data-linewidth" => "6", "data-percent" => "35", "data-rotate" => "180", "data-scalecolor" => "false", "data-size" => "120"}
+            .easyPieChart-inner
+              %strong 1,492
+              %small.text-muted Orders
+          %p
+            %i.fa.fa-caret-down.fa-fw.text-danger{"data-context" => "danger", :rel => "tooltip", :title => "Less than last month"}
+            Target 1,800
+        / /.easy-pie-chart
+        .easy-pie-chart
+          .easyPieChart{"data-barcolor" => "#703688", "data-linewidth" => "6", "data-percent" => "20", "data-rotate" => "180", "data-scalecolor" => "false", "data-size" => "120"}
+            .easyPieChart-inner
+              %strong 836K
+              %small.text-muted Revenue
+          %p
+            %i.fa.fa-caret-up.fa-fw.text-success{"data-context" => "success", :rel => "tooltip", :title => "Greater than last month"}
+            Target 2M
+        / /.easy-pie-chart
+      / /.cols
+      .col-md-6
+        / Tab panes
+        .tab-content{:style => "overflow:hidden"}
+          #tab-visitor.tab-pane.active
+            #chart-visitor{:style => "height:280px"}
+          #tab-order.tab-pane
+            #chart-order{:style => "height:280px"}
+          #tab-revenue.tab-pane
+            #chart-revenue{:style => "height:280px"}
+        #chart-tabs.help-block.text-center{:role => "tablist"}
+          %a.btn.btn-nofill.btn-greentur.active{"data-chart" => "chartBar", :href => "#tab-visitor"} Visitors
+          %a.btn.btn-nofill.btn-belpet{"data-chart" => "chartArea", :href => "#tab-order"} Orders
+          %a.btn.btn-nofill.btn-wistam{"data-chart" => "chartArea2", :href => "#tab-revenue"} Revenue
+      / /.cols
+    / /.row
+    / END OF RESUME CHARTS
+    %hr/
+    / WIDGETS SPACE, PLACE SOME UIKITS HERE OR MAKE YOUR OWN KITS ;)
+    .row
+      .col-md-6
+        / TOP RANK (users, items or others) KIT
+        .panel.panel-default
+          .panel-body
+            %h4
+              Weekly list of the most popular users
+              %br/
+              %small.text-muted Updated at 07:16 am
+            .media
+              %a.pull-left.kit-avatar.kit-avatar-36{:href => "#"}
+                = image_tag "dummy/uifaces11.jpg", class: "media-object"
+              .media-body
+                %h5.media-heading Emma Greene
+                .progress.progress-md
+                  .progress-bar{"aria-valuemax" => "1500", "aria-valuemin" => "0", "aria-valuenow" => "60", :role => "progressbar", :style => "width: 84.33%"}
+                    .progress-text 1,265 sales
+                  / /.progress-bar
+                / /.progress
+              / /.media-body
+            / /.media
+            .media
+              %a.pull-left.kit-avatar.kit-avatar-36{:href => "#"}
+                = image_tag "dummy/uifaces12.jpg", class: "media-object"
+              .media-body
+                %h5.media-heading Júlia Márta
+                .progress.progress-md
+                  .progress-bar.progress-bar-success{"aria-valuemax" => "1500", "aria-valuemin" => "0", "aria-valuenow" => "60", :role => "progressbar", :style => "width: 74.8%"}
+                    .progress-text 1,122 sales
+                  / /.progress-bar
+                / /.progress
+              / /.media-body
+            / /.media
+            .media
+              %a.pull-left.kit-avatar.kit-avatar-36{:href => "#"}
+                = image_tag "dummy/uifaces13.jpg", class: "media-object"
+              .media-body
+                %h5.media-heading Tom Bonnet
+                .progress.progress-md
+                  .progress-bar.progress-bar-info{"aria-valuemax" => "1500", "aria-valuemin" => "0", "aria-valuenow" => "60", :role => "progressbar", :style => "width: 69.27%"}
+                    .progress-text 1,039 sales
+                  / /.progress-bar
+                / /.progress
+              / /.media-body
+            / /.media
+            .media
+              %a.pull-left.kit-avatar.kit-avatar-36{:href => "#"}
+                = image_tag "dummy/uifaces14.jpg", class: "media-object"
+              .media-body
+                %h5.media-heading Naia Gómez
+                .progress.progress-md
+                  .progress-bar.progress-bar-warning{"aria-valuemax" => "1500", "aria-valuemin" => "0", "aria-valuenow" => "60", :role => "progressbar", :style => "width: 64.8%"}
+                    .progress-text 972 sales
+                  / /.progress-bar
+                / /.progress
+              / /.media-body
+            / /.media
+            .media
+              %a.pull-left.kit-avatar.kit-avatar-36{:href => "#"}
+                = image_tag "dummy/uifaces15.jpg", class: "media-object"
+              .media-body
+                %h5.media-heading Gary Lewis
+                .progress.progress-md
+                  .progress-bar.progress-bar-danger{"aria-valuemax" => "1500", "aria-valuemin" => "0", "aria-valuenow" => "60", :role => "progressbar", :style => "width: 58.73%"}
+                    .progress-text 881 sales
+                  / /.progress-bar
+                / /.progress
+              / /.media-body
+            / /.media
+            %br/
+            / Just line
+          / /.panel-body
+        / /.panel
+        / /END TOP RANK KIT
+      / /.cols
+      .col-md-6
+        / RECENTS ORDER KITS
+        .panel.panel-default
+          .panel-heading
+            .panel-actions-input
+              %a.btn.btn-default.btn-sm{:href => "#"} View all orders
+            %h3.panel-title Recent Orders
+          / /.panel-heading
+          .panel-body
+            .media
+              %a.pull-left.kit-avatar.kit-avatar-36{:href => "#"}
+                = image_tag "dummy/uifaces1.jpg", class: "media-object"
+              .media-body
+                .pull-right
+                  .btn-group.btn-group-xs
+                    %a.btn.btn-default{:href => "#", :rel => "tooltip", :title => "approve"}
+                      %i.fa.fa-check.fa-fw
+                    %a.btn.btn-default{:href => "#", :rel => "tooltip", :title => "invoice"}
+                      %i.fa.fa-credit-card.fa-fw
+                    %a.btn.btn-default{:href => "#", :rel => "tooltip", :title => "delete"}
+                      %i.fa.fa-times.fa-fw
+                  / /.btn-group
+                / /.pull-right
+                %h5.media-heading
+                  %a{:href => "#"} Purchase 4 items ($80)
+                .text-muted
+                  %small>
+                    %i.fa.fa-user.fa-fw
+                    Rose Davies
+                     
+                  %small
+                    %i.fa.fa-user.fa-fw
+                    16 minutes
+              / /.media-body
+            / /.media
+            %hr/
+            .media
+              %a.pull-left.kit-avatar.kit-avatar-36{:href => "#"}
+                = image_tag "dummy/uifaces2.jpg", class: "media-object"
+              .media-body
+                .pull-right
+                  .btn-group.btn-group-xs
+                    %a.btn.btn-default{:href => "#", :rel => "tooltip", :title => "approve"}
+                      %i.fa.fa-check.fa-fw
+                    %a.btn.btn-default{:href => "#", :rel => "tooltip", :title => "invoice"}
+                      %i.fa.fa-credit-card.fa-fw
+                    %a.btn.btn-default{:href => "#", :rel => "tooltip", :title => "delete"}
+                      %i.fa.fa-times.fa-fw
+                  / /.btn-group
+                / /.pull-right
+                %h5.media-heading
+                  %a{:href => "#"} Purchase an item - Wrapkit Admin Template
+                .text-muted
+                  %small>
+                    %i.fa.fa-user.fa-fw
+                    Dilara Elmas
+                     
+                  %small
+                    %i.fa.fa-user.fa-fw
+                    20 minutes
+              / /.media-body
+            / /.media
+            %hr/
+            .media
+              %a.pull-left.kit-avatar.kit-avatar-36{:href => "#"}
+                = image_tag "dummy/uifaces3.jpg", class: "media-object"
+              .media-body
+                .pull-right
+                  .btn-group.btn-group-xs
+                    %a.btn.btn-default{:href => "#", :rel => "tooltip", :title => "approve"}
+                      %i.fa.fa-check.fa-fw
+                    %a.btn.btn-default{:href => "#", :rel => "tooltip", :title => "invoice"}
+                      %i.fa.fa-credit-card.fa-fw
+                    %a.btn.btn-default{:href => "#", :rel => "tooltip", :title => "delete"}
+                      %i.fa.fa-times.fa-fw
+                  / /.btn-group
+                / /.pull-right
+                %h5.media-heading
+                  %a{:href => "#"} Payment for invoice #141213
+                .text-muted
+                  %small>
+                    %i.fa.fa-user.fa-fw
+                    George Florianu
+                     
+                  %small
+                    %i.fa.fa-user.fa-fw
+                    42 minutes
+              / /.media-body
+            / /.media
+            %hr/
+            .media
+              %a.pull-left.kit-avatar.kit-avatar-36{:href => "#"}
+                = image_tag "dummy/uifaces4.jpg", class: "media-object"
+              .media-body
+                .pull-right
+                  .btn-group.btn-group-xs
+                    %a.btn.btn-default{:href => "#", :rel => "tooltip", :title => "approve"}
+                      %i.fa.fa-check.fa-fw
+                    %a.btn.btn-default{:href => "#", :rel => "tooltip", :title => "invoice"}
+                      %i.fa.fa-credit-card.fa-fw
+                    %a.btn.btn-default{:href => "#", :rel => "tooltip", :title => "delete"}
+                      %i.fa.fa-times.fa-fw
+                  / /.btn-group
+                / /.pull-right
+                %h5.media-heading
+                  %a{:href => "#"} Purchase an item - Wrapkit Admin Template
+                .text-muted
+                  %small>
+                    %i.fa.fa-user.fa-fw
+                    Gustavo Francisco
+                     
+                  %small
+                    %i.fa.fa-user.fa-fw
+                    1 hours
+              / /.media-body
+            / /.media
+            %hr/
+            .media
+              %a.pull-left.kit-avatar.kit-avatar-36{:href => "#"}
+                = image_tag "dummy/uifaces5.jpg", class: "media-object"
+              .media-body
+                .pull-right
+                  .btn-group.btn-group-xs
+                    %a.btn.btn-default{:href => "#", :rel => "tooltip", :title => "approve"}
+                      %i.fa.fa-check.fa-fw
+                    %a.btn.btn-default{:href => "#", :rel => "tooltip", :title => "invoice"}
+                      %i.fa.fa-credit-card.fa-fw
+                    %a.btn.btn-default{:href => "#", :rel => "tooltip", :title => "delete"}
+                      %i.fa.fa-times.fa-fw
+                  / /.btn-group
+                / /.pull-right
+                %h5.media-heading
+                  %a{:href => "#"} Purchase an item - Wrapkit Admin Template
+                .text-muted
+                  %small>
+                    %i.fa.fa-user.fa-fw
+                    Bastien Guichard
+                     
+                  %small
+                    %i.fa.fa-user.fa-fw
+                    1 hours
+              / /.media-body
+            / /.media
+          / /.panel-body
+        / /.panel
+        / END OF RECENTS ORDER KITS
+      / /.cols
+      .clearfix
+      .col-md-6
+        / TODO KIT
+        .panel.panel-default
+          .panel-heading
+            .panel-actions-input.pull-left
+              %form#addTodo{:action => ""}
+                .nice-checkbox.nice-checkbox-inline
+                  %input#selectAllTodo{:type => "checkbox"}/
+                  %label{:for => "selectAllTodo"}  
+                %input#todoText.form-control.input-sm{:placeholder => "type todo and enter...", :style => "display:inline-block;width:auto"}/
+                %input#todoDate.form-control.input-sm.hide{:placeholder => "pick date and enter...", :style => "display:inline-block;width:auto"}/
+                %button#todoDateBtn.btn.btn-default.btn-sm{:rel => "tooltip", :title => "pick todo date", :type => "button"}
+                  %i.fa.fa-clock-o
+                %button#removeAllTodo.btn.btn-default.btn-sm{:rel => "tooltip", :title => "remove todo", :type => "button"}
+                  %i.fa.fa-trash-o
+                %button.btn.btn-default.btn-sm.hide{:type => "submit"}
+                  %i.fa.fa-plus
+            / /.panel-actions-input
+            %h3.panel-title  
+            / /panel-title
+          / /.panel-heading
+          #todo-lists.todo-lists.nice-scroll{"data-scroll-wrapper" => ".scroll-wrapper", :style => "height:409px"}
+            .scroll-wrapper
+              .kit-todo
+                .kit-todo-actions.pull-right
+                  %a{"data-container" => "body", "data-toggle" => "todo-remove", :href => "#", :rel => "tooltip", :title => "remove"}
+                    %i.fa.fa-times
+                .kit-todo-hover.pull-right
+                  %span.label.label-info
+                    %i.fa.fa-clock-o.fa-fw
+                    09:00 am
+                  %a{"data-container" => "body", "data-toggle" => "todo-complete", :href => "#", :rel => "tooltip", :title => "toggle complete"}
+                    %i.fa.fa-check
+                .nice-checkbox.nice-checkbox-inline
+                  %input#todo1{:type => "checkbox"}/
+                  %label{:for => "todo1"} Change class on UI Kits
+              / /.kit-todo
+              .kit-todo
+                .kit-todo-actions.pull-right
+                  %a{"data-container" => "body", "data-toggle" => "todo-remove", :href => "#", :rel => "tooltip", :title => "remove"}
+                    %i.fa.fa-times
+                .kit-todo-hover.pull-right
+                  %span.label.label-info
+                    %i.fa.fa-clock-o.fa-fw
+                    11:30 am
+                  %a{"data-container" => "body", "data-toggle" => "todo-complete", :href => "#", :rel => "tooltip", :title => "toggle complete"}
+                    %i.fa.fa-check
+                .nice-checkbox.nice-checkbox-inline
+                  %input#todo2{:type => "checkbox"}/
+                  %label{:for => "todo2"} Buy Tea and Coffe
+              / /.kit-todo
+              .kit-todo
+                .kit-todo-actions.pull-right
+                  %a{"data-container" => "body", "data-toggle" => "todo-remove", :href => "#", :rel => "tooltip", :title => "remove"}
+                    %i.fa.fa-times
+                .kit-todo-hover.pull-right
+                  %span.label.label-info
+                    %i.fa.fa-clock-o.fa-fw
+                    03:00 pm
+                  %a{"data-container" => "body", "data-toggle" => "todo-complete", :href => "#", :rel => "tooltip", :title => "toggle complete"}
+                    %i.fa.fa-check
+                .nice-checkbox.nice-checkbox-inline
+                  %input#todo3{:type => "checkbox"}/
+                  %label{:for => "todo3"} Update lates wireframe
+              / /.kit-todo
+              .kit-todo
+                .kit-todo-actions.pull-right
+                  %a{"data-container" => "body", "data-toggle" => "todo-remove", :href => "#", :rel => "tooltip", :title => "remove"}
+                    %i.fa.fa-times
+                .kit-todo-hover.pull-right
+                  %span.label.label-info
+                    %i.fa.fa-clock-o.fa-fw
+                    Tomorrow
+                  %a{"data-container" => "body", "data-toggle" => "todo-complete", :href => "#", :rel => "tooltip", :title => "toggle complete"}
+                    %i.fa.fa-check
+                .nice-checkbox.nice-checkbox-inline
+                  %input#todo4{:type => "checkbox"}/
+                  %label{:for => "todo4"} Metting team
+              / /.kit-todo
+              .kit-todo
+                .kit-todo-actions.pull-right
+                  %a{"data-container" => "body", "data-toggle" => "todo-remove", :href => "#", :rel => "tooltip", :title => "remove"}
+                    %i.fa.fa-times
+                .kit-todo-hover.pull-right
+                  %span.label.label-info
+                    %i.fa.fa-clock-o.fa-fw
+                    Tomorrow
+                  %a{"data-container" => "body", "data-toggle" => "todo-complete", :href => "#", :rel => "tooltip", :title => "toggle complete"}
+                    %i.fa.fa-check
+                .nice-checkbox.nice-checkbox-inline
+                  %input#todo5{:type => "checkbox"}/
+                  %label{:for => "todo5"} Finishing on design brief
+              / /.kit-todo
+              .kit-todo
+                .kit-todo-actions.pull-right
+                  %a{"data-container" => "body", "data-toggle" => "todo-remove", :href => "#", :rel => "tooltip", :title => "remove"}
+                    %i.fa.fa-times
+                .kit-todo-hover.pull-right
+                  %span.label.label-info
+                    %i.fa.fa-clock-o.fa-fw
+                    Tomorrow
+                  %a{"data-container" => "body", "data-toggle" => "todo-complete", :href => "#", :rel => "tooltip", :title => "toggle complete"}
+                    %i.fa.fa-check
+                .nice-checkbox.nice-checkbox-inline
+                  %input#todo6{:type => "checkbox"}/
+                  %label{:for => "todo6"} Build an app to client
+              / /.kit-todo
+              .kit-todo
+                .kit-todo-actions.pull-right
+                  %a{"data-container" => "body", "data-toggle" => "todo-remove", :href => "#", :rel => "tooltip", :title => "remove"}
+                    %i.fa.fa-times
+                .kit-todo-hover.pull-right
+                  %span.label.label-info
+                    %i.fa.fa-clock-o.fa-fw
+                    Tomorrow
+                  %a{"data-container" => "body", "data-toggle" => "todo-complete", :href => "#", :rel => "tooltip", :title => "toggle complete"}
+                    %i.fa.fa-check
+                .nice-checkbox.nice-checkbox-inline
+                  %input#todo7{:type => "checkbox"}/
+                  %label{:for => "todo7"} Metting Team
+              / /.kit-todo
+              .kit-todo
+                .kit-todo-actions.pull-right
+                  %a{"data-container" => "body", "data-toggle" => "todo-remove", :href => "#", :rel => "tooltip", :title => "remove"}
+                    %i.fa.fa-times
+                .kit-todo-hover.pull-right
+                  %span.label.label-info
+                    %i.fa.fa-clock-o.fa-fw
+                    On week
+                  %a{"data-container" => "body", "data-toggle" => "todo-complete", :href => "#", :rel => "tooltip", :title => "toggle complete"}
+                    %i.fa.fa-check
+                .nice-checkbox.nice-checkbox-inline
+                  %input#todo5{:type => "checkbox"}/
+                  %label{:for => "todo5"} Finishing on design brief
+              / /.kit-todo
+              .kit-todo
+                .kit-todo-actions.pull-right
+                  %a{"data-container" => "body", "data-toggle" => "todo-remove", :href => "#", :rel => "tooltip", :title => "remove"}
+                    %i.fa.fa-times
+                .kit-todo-hover.pull-right
+                  %span.label.label-info
+                    %i.fa.fa-clock-o.fa-fw
+                    On week
+                  %a{"data-container" => "body", "data-toggle" => "todo-complete", :href => "#", :rel => "tooltip", :title => "toggle complete"}
+                    %i.fa.fa-check
+                .nice-checkbox.nice-checkbox-inline
+                  %input#todo6{:type => "checkbox"}/
+                  %label{:for => "todo6"} Build an app to client
+              / /.kit-todo
+              .kit-todo
+                .kit-todo-actions.pull-right
+                  %a{"data-container" => "body", "data-toggle" => "todo-remove", :href => "#", :rel => "tooltip", :title => "remove"}
+                    %i.fa.fa-times
+                .kit-todo-hover.pull-right
+                  %span.label.label-info
+                    %i.fa.fa-clock-o.fa-fw
+                    On week
+                  %a{"data-container" => "body", "data-toggle" => "todo-complete", :href => "#", :rel => "tooltip", :title => "toggle complete"}
+                    %i.fa.fa-check
+                .nice-checkbox.nice-checkbox-inline
+                  %input#todo7{:type => "checkbox"}/
+                  %label{:for => "todo7"} Metting Team
+              / /.kit-todo
+            / /.scroll-wrapper
+          / /.todo-lists
+        / /.panel
+        / END TODO KIT
+      / /.cols
+      .col-md-6
+        .panel.panel-default
+          .panel-heading
+            %ul.panel-actions
+              %li
+                %a{"data-toggle" => "panel-expand", :href => "#"}
+                  %i.fa.fa-expand
+              %li
+                %a{"data-toggle" => "panel-collapse", :href => "#"}
+                  %i.fa.fa-angle-down
+              %li
+                %a{"data-toggle" => "panel-close", :href => "#"}
+                  %i.fa.fa-times
+            %h3.panel-title Activity
+          .panel-body.nice-scroll{"data-scroll-wrapper" => ".scroll-wrapper", :style => "height:409px"}
+            / Activity
+            .activity-wrapper.scroll-wrapper
+              .activity-list
+                .activity-status
+                  .pull-right.text-muted
+                    %strong Update
+                    %small 2 hours ago
+                  %a.activity-icon.bg-belpet{:href => "#", :rel => "tooltip-right", :title => "read changelog"}
+                    %i.fa.fa-refresh
+                  / /.activity-icon
+                  .activity-description
+                    %strong
+                      %a{:href => "#"} Bent
+                    just update his project
+                    %strong
+                      %a{:href => "#"} Wrapkit - Admin template
+                  / /.activity-description
+                / /.activity-status
+                .activity-comments
+                  .media
+                    %p
+                      %strong
+                        %a{:href => "#"} Igor Dias
+                      %small.text-muted 1 hours ago
+                    %a.kit-avatar.kit-avatar-32.pull-left{:href => "#"}
+                      = image_tag "dummy/uifaces15.jpg"
+                    .media-body
+                      Tortor tristique, vestibulum ipsum. Pellentesque aliquet mauris, nunc pellentesque. Nascetur dis sollicitudin, mattis phasellus scelerisque. Hac vivamus, hac sapien semper, dapibus sed at. Nonummy neque, mattis massa malesuada. Suspendisse accumsan aptent.
+                  / /.media as comment-item
+                  .media
+                    %p
+                      %strong
+                        %a{:href => "#"} Marcel Illés
+                      %small.text-muted 2 hours ago
+                    %a.kit-avatar.kit-avatar-32.pull-left{:href => "#"}
+                      = image_tag "dummy/uifaces11.jpg"
+                    .media-body
+                      Ligula sed consectetuer, quisque urna. Vel eu, vehicula aliquam, nostra ultricies. Ligula at. Blandit mauris dolor, auctor non, in felis. Nec feugiat eu, id ridiculus aenean, cursus lacus sapien. Nibh dolor tincidunt.
+                  / /.media as comment-item
+                  .media
+                    %p
+                      %strong
+                        %a{:href => "#"} Adam Jensen
+                      %small.text-muted 2 hours ago
+                    %a.kit-avatar.kit-avatar-32.pull-left{:href => "#"}
+                      = image_tag "dummy/uifaces6.jpg"
+                    .media-body
+                      Rutrum id amet, sem sem quis, dictum donec ante. Sem wisi lectus. Malesuada sapien. In aliquam lorem. Nibh quis, fermentum porta.
+                  / /.media as comment-item
+                / /.activity-comments
+                .activity-form
+                  %form{:action => "#", :role => "form"}
+                    .form-group
+                      .input-group.input-group-in
+                        /
+                          <div class="input-group-addon input-group-textarea">
+                          <img class="img-circle activity-avatar" src="images/dummy/profile.jpg" alt="user">
+                          </div>
+                        %textarea.form-control.no-resize.autogrow{:placeholder => "Add a comment..."}
+                        .input-group-btn.input-group-textarea
+                          %label.btn.btn-default
+                            %i.fa.fa-paperclip
+                            %input.hide{:multiple => "multiple", :type => "file"}/
+                          %button.btn.btn-default{:type => "submit"} Submit
+                      / /input-group-in
+                    / /.form-group
+                  / /form
+                / /.activity-form
+              / /.activity-list
+              .activity-list
+                .activity-status
+                  .pull-right.text-muted
+                    %strong Update
+                    %small 4 hours ago
+                  %a.activity-icon.bg-nephem{:href => "#", :rel => "tooltip-right", :title => "go to file"}
+                    %i.fa.fa-cloud-upload
+                  / /.activity-icon
+                  .activity-description
+                    %strong
+                      %a{:href => "#"} Nidia Djuvara
+                    just Upload a revision design
+                    %strong
+                      %a{:href => "#"} #D7043
+                  / /.activity-description
+                / /.activity-status
+                .activity-comments
+                  .media
+                    %p
+                      %strong
+                        %a{:href => "#"} Isabella Huber
+                      %small.text-muted 2 hours ago
+                    %a.kit-avatar.kit-avatar-32.pull-left{:href => "#"}
+                      = image_tag "dummy/uifaces14.jpg"
+                    .media-body
+                      Sem egestas morbi. Nullam placerat nunc. Ut eget, urna nibh dui. Interdum volutpat, vestibulum cras elementum. Id ornare sed, tortor massa. Habitant mollis, quis vivamus.
+                      %hr/
+                      .pull-right
+                        %a{:href => "#"} download all
+                      %p.lead
+                        Attachments
+                        %small.text-muted (3 files, 1.21 MB)
+                      %ul.list-unstyled
+                        %li.clearfix
+                          .pull-right
+                            %a{:href => "#"}> view
+                               
+                            %a{:href => "#"} download
+                          %p
+                            Design_brief.zip
+                            %small (654 KB)
+                        %li.clearfix
+                          .pull-right
+                            %a{:href => "#"}> view
+                               
+                            %a{:href => "#"} download
+                          %p
+                            Revision_191213.jpg
+                            %small (184 KB)
+                      / /list-attachments
+                  / /.media as comment-item
+                / /.activity-comments
+                .activity-form
+                  %form{:action => "#", :role => "form"}
+                    .form-group
+                      .input-group.input-group-in
+                        %textarea.form-control.no-resize.autogrow{:placeholder => "Add a comment..."}
+                        .input-group-btn.input-group-textarea
+                          %label.btn.btn-default
+                            %i.fa.fa-paperclip
+                            %input.hide{:multiple => "multiple", :type => "file"}/
+                          %button.btn.btn-default{:type => "submit"} Submit
+                      / /input-group-in
+                    / /.form-group
+                  / /form
+                / /.activity-form
+              / /.activity-list
+              %p.text-center
+                %a.btn.btn-default.btn-xs{:href => "#"} Load more...
+            / /.activity-wrapper
+          / /.panel-body
+        / /.panel
+      / /.cols
+    / /.row
+  / /.content
+/ /.content-wrapper

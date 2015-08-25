@@ -1,0 +1,70 @@
+.panel-datatable.panel.panel-default
+  = simple_form_for @customer, :html => {:class => 'customer_details_update'} do |f|
+    .row.form-group
+      .col-lg-8
+        Service Address
+        .row
+          .col-lg-6
+            = f.input :first_name, :label => t('customer.first_name')
+          .col-lg-6
+            = f.input :last_name, :label => t('customer.last_name')
+        .row
+          .col-lg-2
+            = f.input :service_street_number, :label => t('customer.street_number')
+          .col-lg-6
+            = f.input :service_address, :label => t('customer.address')
+          .col-lg-2
+            = f.input :service_address, :label => t('customer.street_type')
+          .col-lg-2
+            = f.input :service_address, :label => t('customer.misc')
+        .row
+          .col-lg-2
+            = f.input :fi_postal_code, :label => t('customer.postal_code')
+          .col-lg-3
+            = f.input :service_province, :label => t('customer.province')
+          .col-lg-3
+            = f.input :service_country,  :label => t('customer.country')
+          .col-lg-4
+            = f.input :service_city, :label => t('customer.city')
+        .row
+          .col-lg-6
+            = f.input :service_phone, :label => t('customer.home_phone')
+          .col-lg-6
+            = f.input :service_mobile, :label => t('customer.mobile_phone')
+        .row
+          .col-lg-12
+            = f.input :service_email, :label => t('customer.email')
+        Mailing Address
+        .row
+          .col-lg-3
+            = f.input :use_service_address, wrapper: :vertical_boolean, :input_html => { :checked => true }
+        .mailing_address
+          .row
+            .col-lg-2
+              = f.input :mailing_street_number, :label => t('customer.street_number')
+            .col-lg-6
+              = f.input :mailing_address, :label => t('customer.address')
+            .col-lg-2
+              = f.input :mailing_address, :label => t('customer.street_type')
+            .col-lg-2
+              = f.input :mailing_address, :label => t('customer.misc')
+          .row
+            .col-lg-3
+              = f.input :mailing_province, :label => t('customer.province')
+            .col-lg-3
+              = f.input :mailing_country,  :label => t('customer.country')
+            .col-lg-4
+              = f.input :mailing_city, :label => t('customer.city')
+          .row
+            .col-lg-6
+              = f.input :mailing_phone, :label => t('customer.home_phone')
+            .col-lg-6
+              = f.input :mailing_mobile, :label => t('customer.mobile_phone')
+          .row
+            .col-lg-12
+              = f.input :mailing_email, :label => t('customer.email')
+      .row
+      .col-md-4
+        = button_tag( :class => "form-control btn btn-primary") do
+          %span Update
+          %i.fa.fa-spinner.fa-spin.hidden

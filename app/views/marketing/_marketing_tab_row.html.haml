@@ -1,0 +1,32 @@
+= link_to marketing_index_path, class: "btn-call main-button #{'active' if current_page?(marketing_index_path)}" do
+  %i.fa.fa-bar-chart-o
+  %br/
+  %span Overview
+
+= link_to products_marketing_index_path, class: "btn-call main-button #{'active' if current_page?(products_marketing_index_path)}" do
+  %i.fa.fa-bar-chart-o
+  %br/
+  %span Products
+
+= link_to programs_marketing_index_path, class: "btn-call main-button #{'active' if current_page?(programs_marketing_index_path)}" do
+  %span.badge.badge-success
+  %i.fa.fa-bar-chart-o
+  %br/
+  %span Program Code
+
+= link_to digital_field_marketing_index_path, class: "btn-call main-button #{'active' if current_page?(digital_field_marketing_index_path)}" do
+  %i.fa.fa-bar-chart-o
+  %br/
+  %span Digital Field App
+
+= link_to collateral_marketing_index_path, class: "btn-call main-button #{'active' if current_page?(collateral_marketing_index_path)}" do
+  %span.badge.badge-warning
+  %i.fa.fa-bar-chart-o
+  %br/
+  %span Collateral
+
+= link_to promotions_marketing_index_path, class: "btn-call main-button #{'active' if current_page?(promotions_marketing_index_path)}" do
+  %span.badge.badge-warning
+  %i.fa.fa-bar-chart-o
+  %br/
+  %span Promotions

@@ -1,0 +1,15 @@
+%section.content-wrapper
+  - title "Customer Billing"
+  = render "shared/header"
+  .content
+    .help-block.text-center
+      = render "customer_tab_row"
+    %hr
+    %section.agent-info
+      .row
+        = render 'details'
+
+        = render 'products_table'
+    %hr
+
+    = render 'customer_info'

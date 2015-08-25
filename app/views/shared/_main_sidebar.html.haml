@@ -1,0 +1,79 @@
+%aside.sidebar{"data-control" => "wrapkit-sidebar"}
+  .sidebar-actions
+    #sidebar-actions-bar.sidebar-actions-pane.active
+      %ul.sidebar-actions-bar
+        %li
+          %a{"data-toggle" => "sidebar-size", href: "#", title: "Toggle Sidebar Size"}
+            %i.fa.fa-bars
+  %nav.sidebar-nav
+    %ul.nav
+      %li.nav-item{ class: ("active" if current_page?(root_path)) }
+        %a{href: root_path}
+          %i.nav-item-icon.fa.fa-home
+          %span.nav-item-text Dashboard
+      %li.nav-item
+        %a{href: "#"}
+          %i.nav-item-icon.fa.fa-th
+          %span.nav-item-text Distributorships
+      %li.nav-item
+        %a{href: "#"}
+          %i.nav-item-icon.fa.fa-th
+          %span.nav-item-text Offices
+      - if policy(:ic_menu).show?
+        %li.nav-item{ class: ['ic-page-nav-link', ("active" if current_page?(controller: "independent_contractors"))]}
+          %a{href: independent_contractors_path}
+            %i.nav-item-icon.fa.fa-users
+            %span.nav-item-text Independent Contractors
+      %li.nav-item{ class: ("active" if current_page?(controller: "customers")) }
+        %a{href: customers_path}
+          %i.nav-item-icon.fa.fa-home
+          %span.nav-item-text Customers
+
+
+      %li.nav-item
+        %a{"data-toggle" => "nav-item-child", :href => "#"}
+          %span.caret
+          %i.nav-item-icon.fa.fa-th
+          %span.nav-item-text Sales
+        %ul.nav-item-child
+          %li
+            %a{:href => "#"}
+              %span.nav-item-text Distributor
+          %li
+            %a{:href => "#"}
+              %span.nav-item-text Manager
+          %li
+            %a{:href => "#"}
+              %span.nav-item-text Team Leader
+          %li
+            %a{:href => "#"}
+              %span.nav-item-text Agent
+
+      %li.nav-item
+        %a{"data-toggle" => "nav-item-child", :href => "#"}
+          %span.caret
+          %i.nav-item-icon.fa.fa-th
+          %span.nav-item-text Operations
+        %ul.nav-item-child
+          %li
+            %a{:href => "#"}
+              %span.nav-item-text Customer Base
+          %li
+            %a{:href => "#"}
+              %span.nav-item-text Billing
+          %li
+            %a{:href => "#"}
+              %span.nav-item-text Distributor Management
+
+      %li.nav-item
+        %a{href: "#"}
+          %i.nav-item-icon.fa.fa-users
+          %span.nav-item-text Installs
+      %li.nav-item
+        %a{href: "#"}
+          %i.nav-item-icon.fa.fa-usd
+          %span.nav-item-text Finance
+      %li.nav-item
+        %a{href: marketing_index_path}
+          %i.nav-item-icon.fa.fa-users
+          %span.nav-item-text Marketing

@@ -1,0 +1,234 @@
+.panel.panel-default
+  .panel-body
+    #rootwizard.wizard
+      %ul
+        %li
+          %a{"data-toggle" => "tab", :href => "#wizard1"}
+            %span.number 1
+            %span.desc General Info
+        %li
+          %a{"data-toggle" => "tab", :href => "#wizard2"}
+            %span.number 2
+            %span.desc Agent Info
+        %li
+          %a{"data-toggle" => "tab", :href => "#wizard3"}
+            %span.number 3
+            %span.desc Documentation
+        %li
+          %a{"data-toggle" => "tab", :href => "#wizard4"}
+            %span.number 4
+            %span.desc Overrides
+      / /wizard-nav
+      .progress.progress-striped
+        .progress-bar
+      / /.progressbar
+      = form_for @ic, html: { class: "form-horizontal", novalidate: ''} do |f|
+        = render 'shared/error_messages', object: f.object
+        .tab-content
+          #wizard1.tab-pane
+            %h3.lead What kind of Independent Contactor?
+            .form-group
+              %label.col-md-2.col-sm-2.control-label
+                = f.label :ic_code
+                %span.text-danger *
+              .col-md-7.col-sm-9
+                = f.select :ic_code, options_for_select(IndependentContractor::USER_SUBTYPES_FOR_SELECT.collect {|p| [ p['name'], p['name'] ] }), {}, :class => 'form-control'
+            = f.fields_for :user do |ff|
+              = render 'shared/error_messages', object: f.object
+              .form-group
+                %label.col-md-2.col-sm-2.control-label.user-name Name
+                .col-md-7.col-sm-9
+                  .row
+                    .col-md-6.col-sm-6
+                      = ff.label :first_name
+                      %span.text-danger *
+                      = ff.text_field :first_name, class: "form-control"
+                    .col-md-6.col-sm-6
+                      = ff.label :last_name
+                      %span.text-danger *
+                      = ff.text_field :last_name, class: "form-control"
+              .form-group
+                %label.col-md-2.col-sm-2.control-label Log In
+                .col-md-7.col-sm-9
+                  .row
+                    .col-md-12.col-sm-12
+                      .row
+                        .col-md-6.col-sm-6
+                          = ff.label :username
+                          %span.text-danger *
+                          = ff.text_field :username, class: 'form-control'
+                        .col-md-6.col-sm-6{:style => 'padding-top: 20px'}
+                          %label The company convention is first letterof first name and last name.
+                    .col-md-12.col-sm-12
+                      .row
+                        .col-md-6.col-sm-6
+                          = ff.label :password
+                          %span.text-danger *
+                          = ff.password_field :password, class: 'form-control'
+                        .col-md-6.col-sm-6
+                          = ff.label :password_confirmation, "Repeat Password"
+                          %span.text-danger *
+                          = ff.password_field :password_confirmation, class: 'form-control'
+              .form-group.has-feedback
+                %label.col-md-2.col-sm-2.control-label
+                  = ff.label :email
+                  %span.text-danger *
+                .col-md-7.col-sm-9
+                  .form-group
+                    .col-md-12.col-sm-12
+                      = ff.text_field :email, class: "form-control"
+                      %span.glyphicon.glyphicon-envelope.form-control-feedback
+                  .form-group
+                    .col-md-6.col-sm-6
+                      = f.label :phone_mobile, "Mobile Phone"
+                      = f.text_field :phone_mobile, class: "form-control"
+                    .col-md-6.col-sm-6
+                      = f.label :phone_home, "Home Phone"
+                      = f.text_field :phone_home, class: "form-control"
+                  .form-group
+                  .form-group
+                    .col-md-6.col-sm-6
+                      = f.label :country
+                      %span.text-danger *
+                      = f.text_field :country, class: "form-control"
+                    .col-md-6.col-sm-6
+                      = f.label :state_province
+                      %span.text-danger *
+                      = f.select :state_province, options_for_select([]), {:prompt => 'Please select a Province'}, required: true, :class => "form-control"
+              .form-group
+                %label.col-md-2.col-sm-2.control-label Address
+                .col-md-7.col-sm-9
+                  .form-group
+                    .col-md-6.col-sm-6
+                      = f.label :city
+                      %span.text-danger *
+                      = f.text_field :city, class: "form-control"
+                    .col-md-6.col-sm-6
+                      = f.label :postal_zip, "Postal/Zip"
+                      %span.text-danger *
+                      = f.text_field :postal_zip, class: "form-control"                  
+              .form-group
+                .col-md-offset-2.col-md-8.col-sm-offset-2.col-sm-9
+                  .row
+                    .col-md-3.col-sm-6
+                      = f.label :street_number, "Street No."
+                      %span.text-danger *
+                      = f.text_field :street_number, class: "form-control"
+                    .col-md-4.col-sm-6
+                      = f.label :street_name
+                      %span.text-danger *
+                      = f.text_field :street_name, class: "form-control"
+                    .col-md-3.col-sm-6
+                      = f.label :street_type
+                      %span.text-danger *
+                      = f.select :street_type, options_for_select([]), {:prompt => 'Please select a Street Type'}, required: true, :class => "form-control"
+                    .col-md-2.col-sm-6
+                      = f.label :unit_num, "Unit No."
+                      = f.text_field :unit_num, class: "form-control"
+          / /.tab-pane
+          #wizard2.tab-pane
+            %h3.lead Provide your profile details
+            .form-group
+              %label.col-md-3.col-sm-3.control-label{:for => "fullname"}
+                Fullname
+                %span.text-danger *
+              .col-md-6.col-sm-8
+                %input#fullname.form-control{:name => "fullname"}/
+            / /form-group
+            .form-group
+              %label.col-md-3.col-sm-3.control-label{:for => "phoneNumber"}
+                Phone Number
+                %span.text-danger *
+              .col-md-6.col-sm-8
+                %input#phoneNumber.form-control{:name => "phoneNumber", :type => "number"}
+            / /form-group
+            .form-group
+              %label.col-md-3.col-sm-3.control-label{:for => "gender"}
+                Gender
+                %span.text-danger *
+              .col-md-6.col-sm-8
+                .nice-radio.nice-radio-inline
+                  %input#genderMale{:checked => "checked", :name => "gender", :type => "radio", :value => "Male"}
+                  %label{:for => "genderMale"} Male
+                .nice-radio.nice-radio-inline
+                  %input#genderFemale{:name => "gender", :type => "radio", :value => "Female"}
+                  %label{:for => "genderFemale"} Female
+            / /form-group
+            .form-group
+              %label.col-md-3.col-sm-3.control-label{:for => "address"}
+                Address
+                %span.text-danger *
+              .col-md-6.col-sm-8
+                %input#address.form-control{:name => "address"}
+            / /form-group
+            .form-group
+              %label.col-md-3.col-sm-3.control-label{:for => "country"}
+                Country
+                %span.text-danger *
+              .col-md-6.col-sm-8
+                %input
+            / /form-group
+            .form-group
+              %label.col-md-3.col-sm-3.control-label{:for => "briefNotes"} Brief Notes
+              .col-md-6.col-sm-8
+                %textarea#briefNotes.autogrow.form-control{:name => "briefNotes", :rows => "3"}
+            / /form-group
+          / /.tab-pane
+          #wizard3.tab-pane
+            %h3.lead Provide your payment details
+            .form-group
+              %label.col-md-3.control-label{:for => "cardName"}
+                Name on card
+                %span.text-danger *
+              .col-md-5
+                %input#cardName.form-control{:name => "cardName"}
+            / /form-group
+            .form-group
+              %label.col-md-3.control-label{:for => "cardNumber"}
+                Card Number
+                %span.text-danger *
+              .col-md-5
+                .row
+                  .col-md-8
+                    %input#cardNumber.form-control{:name => "cardNumber"}/
+                  .col-md-4
+                    %input#cvc.form-control{:name => "cvc", :placeholder => "CVV2"}
+            / /form-group
+            .form-group
+              %label.col-md-3.control-label{:for => "cardExpired"}
+                Card Expired
+                %span.text-danger *
+              .col-md-5
+                %input#cardExpired.form-control{:name => "cardExpired", :type => "date"}
+            / /form-group
+            .form-group
+              %label.col-md-3.control-label{:for => "cardExpired"} Auto-pay
+              .col-md-5
+                .nice-checkbox
+                  %input#autoPay1{:name => "autoPay", :type => "checkbox", :value => "1"}
+                  %label{:for => "autoPay1"} Yes, with this Credit Card
+                .nice-checkbox
+                  %input#autoPay0{:name => "autoPay", :type => "checkbox", :value => "0"}
+                  %label{:for => "autoPay0"} Send me an email about Payment
+            / /form-group
+          / /.tab-pane
+          #wizard4.tab-pane
+            %h3.lead Make sure you entered the correct data!
+            %h4.page-header.lead Account
+            %h4.page-header.lead Profile
+            %h4.page-header.lead Billing
+          / /.tab-pane
+          .wizard-actions
+            .form-group
+              .col-md-5.col-md-offset-9.col-sm-5.col-sm-offset-8
+                %button.btn.btn-silc.wizard-prev{:type => "button"}
+                  %i.fa.fa-arrow-circle-o-left
+                  Back
+                %button.btn.btn-primary.wizard-next{:type => "button"}
+                  Continue
+                  %i.fa.fa-arrow-circle-o-right
+                %button.btn.btn-primary.finish{:type => "submit"} Submit
+
+= javascript_include_tag "theme/demo/form-wizard-demo.js"
+
+

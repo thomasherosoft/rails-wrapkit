@@ -1,0 +1,52 @@
+.col-md-6.agent-badge-image
+  .panel.panel-default
+    .panel-body
+      .row
+        .col-md-6
+          %select.form-control
+            %option.selected Choose Application #
+            %option 1
+            %option 2
+            %option 3
+        .col-md-6
+          .col-md-6
+            Bill Cycle
+          .col-md-6
+            .input-group.date
+              %input.form-control.datepick{:type => "text"}
+              %span.input-group-addon
+                %i.fa.fa-calendar
+      %hr
+      .row
+        .col-md-6
+          Bill Start Date
+          .input-group.date
+            %input.form-control.datepick{:type => "text"}
+            %span.input-group-addon
+              %i.fa.fa-calendar
+        .col-md-6
+          Base Monthly Rate
+          %input.form-control{:type => "text"}
+      .row
+        .col-md-6
+          Next Due Date
+          .input-group.date
+            %input.form-control.datepick{:type => "text"}
+            %span.input-group-addon
+              %i.fa.fa-calendar
+        .col-md-6
+          Current Monthly Rate
+          %input.form-control{:type => "text"}
+      %hr
+      .row
+        .col-md-6
+          Billing Status
+          .row
+            %i.fa.fa-thumbs-up
+            Good Standing
+        .col-md-6
+          Method of Payment
+          .row
+            %i.fa.fa-tasks
+            ENBRIDGE
+

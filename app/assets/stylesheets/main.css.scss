@@ -1,0 +1,101 @@
+// General
+.btn-call{
+  min-width: 100px;
+}
+// Tables
+.table-id {
+  width: 100px;
+}
+.table-actions {
+  width: 165px;
+}
+
+.panel-h3{
+  color: #3e5771;
+}
+
+.tab-custom{
+  padding: 15px;
+  .ul-custom{
+    padding-left: 40px;
+  }
+  .panel{
+    padding: 15px;
+  }
+  .nav-tabs>li{
+    margin-bottom: -2px;
+  }
+  // .form-group{
+  //   font-size: 17px;
+  //   .form-control{
+  //     height: 40px;
+  //     border-radius: 8px;
+  //     box-shadow: 0 0 1px 1px #7B7B7B inset;
+  //   }
+  // }
+}
+img.server_image {
+  min-width: 125px;
+}
+
+.icon-blue {
+  color: #408ac9;
+}
+.icon-red {
+  color: #db534b;
+}
+.icon-green {
+  color: #59b956;
+}
+.icon-light-blue {
+  color: #58c0e0;
+
+}
+thead.grey-header {
+  background: #f7f8f8;
+  border-top: 1px solid #dededd;
+}
+
+/* redefine */
+.control-label {
+  text-align: left !important;
+}
+
+.form-control {
+  border: 1px solid #ccc !important;
+  border-radius: 4px !important;
+  color: #5a5b5b;
+}
+
+.user-name {
+  margin-top: 24px;
+}
+
+.email-form {
+  position: relative;
+}
+
+.form-control-feedback {
+  font-size: 27px;
+}
+
+.nav.nav-wizard li.active .number {
+  background-color: #4a9f4b;
+}
+
+.progress-striped .progress-bar {
+  background-color: #4a9f4b;
+}
+
+body {
+  color: #5a5b5b;
+}
+
+.nav.nav-wizard .number {
+  background-color: #5a5b5b;
+  color: #ffffff;
+}
+
+.nav.nav-wizard .desc {
+  color: #5a5b5b;
+}

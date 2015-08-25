@@ -1,0 +1,15 @@
+.content-header
+  .pull-right.hidden-xs
+    / %ol.breadcrumb
+    /   %li
+    /     %a{href: root_path} Dashboard
+    /   %li
+    /     Customers
+  %h1.content-title
+    = yield(:title)
+    = yield(:sub_title)
+
+- if !yield(:page_actions).empty?
+  .content-actions
+    .pull-right
+      = yield(:page_actions)

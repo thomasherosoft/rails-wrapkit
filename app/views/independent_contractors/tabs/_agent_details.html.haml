@@ -1,0 +1,31 @@
+-#= simple_form_for @agent, :html => {:class => 'agent_details_update'} do |f|
+-#  .panel-datatable.panel.panel-default
+-#    .row.form-group
+-#      .col-lg-3
+-#        .row
+-#          .col-lg-12
+-#            = f.input :agent_type, as: :radio_buttons, collection: [t('agent.agent'), t('agent.team_lead'), t('agent.manager'), t('agent.distributor')]
+-#      .col-lg-6
+-#        .row
+-#          .col-lg-6
+-#            = f.input :distributor_name, :label => t('agent.distributor')
+-#          .col-lg-6
+-#            = f.input :agent_number, :label => t('agent.agent_number')
+-#        .row
+-#          .col-lg-6
+-#            = f.input :payment_method, :label => t('agent.payment_method')
+-#          .col-lg-6
+-#            = f.input :gst_number, :label => t('agent.gst')
+-#        .row
+-#          .col-lg-6
+-#            = f.input :bin_number, :label => t('agent.bin')
+-#          .col-lg-3
+-#            = f.input :pre_inspector, wrapper: :vertical_boolean
+-#          .col-lg-3
+-#            = f.input :active, wrapper: :vertical_boolean
+-#    %hr
+-#    .row
+-#      .col-md-2
+-#        = button_tag( :class => "form-control btn btn-primary") do
+-#          %span Update Agent
+-#          %i.fa.fa-spinner.fa-spin.hidden

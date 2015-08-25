@@ -1,0 +1,104 @@
+%section.content-wrapper
+  - title "Programs Codes"
+  / - content_for :page_actions do
+  /   %a.btn.btn-primary.btn-sm{href: new_marketing_document_path, data: {behavior: "new-marketing-document"}}
+  /     %i.fa.fa-plus.fa-fw
+  /     Add New Document
+  = render "shared/header"
+
+  .content
+    .help-block.text-center
+      = render "marketing_tab_row"
+    %hr
+    %section.agent-info
+      .row
+        .col-md-6
+          .panel.panel-default
+            .panel-heading
+              / .panel-actions-input
+              /   %a.btn.btn-default.btn-sm{:href => "#"} View all orders
+              %h3.panel-title Programs
+            .panel-body
+              %table.table.latest-deals
+                %thead
+                  %tr
+                    %th Program Code
+                    %th Date
+                    %th Active
+                %tbody
+                  %tr{data: {href: "#"}}
+                    %td HVAC125-840-225
+                    %td 2014-07-07
+                    %td
+                  %tr{data: {href: "#"}}
+                    %td HVAC125-840-225
+                    %td 2014-07-07
+                    %td
+                  %tr{data: {href: "#"}}
+                    %td HVAC125-840-225
+                    %td 2014-07-07
+                    %td
+        .col-md-6
+          .panel.panel-default
+            .panel-heading
+              .panel-actions-input
+                %a.btn.btn-primary.btn-sm{:href => "#"} NEW PROGRAM
+              %h3.panel-title Details
+            .panel-body
+              %h2 HVAC-125-840-225
+              / %h4.sub-heading {SUBTYPE}, {TYPE}
+              .row
+                .col-sm-4
+                  %p Product 1:
+                .col-sm-8
+                  %p $199
+              .row
+                .col-sm-4
+                  %p Product 2:
+                .col-sm-8
+                  %p $499
+              .row
+                .col-sm-4
+                  %p Frequency:
+                .col-sm-8
+                  %p Monthly
+              .row
+                .col-sm-4
+                  %p TC:
+                .col-sm-8
+                  %p <link to scan>
+              .row
+                .col-sm-4
+                  %p Rate Schedule:
+                .col-sm-8
+                  %p <increase rate>
+              .row
+                .col-sm-4
+                  %p Country, Province:
+                .col-sm-8
+                  %p Canada, Ontario
+              .row
+                .col-sm-4
+                  %p Territories:
+                .col-sm-8
+                  %p Enbridge
+              .row
+                .col-sm-4
+                  %p Special Promotions:
+                .col-sm-8
+                  %p 30 Days Free A/C
+
+              .row
+                .col-sm-12
+                  %p NOTES:
+                  %br
+                  %textarea#inputTextarea.form-control{:placeholder => "Placeholder", :rows => "3"}
+              %hr
+              .row
+                .col-sm-12.text-right
+                  .form-group
+                    %button.btn.btn-primary{:type => "submit"} UPDATE
+
+    %hr
+
+    / = render 'customer_info'

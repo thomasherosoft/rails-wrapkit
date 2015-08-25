@@ -1,0 +1,27 @@
+%section.content-wrapper
+  - title "Customers"
+  = render "shared/header"
+  .content
+    #panel-datatableTools.panel.panel-default
+      / .panel-heading
+      /   %h3.panel-title Customers
+      .panel-body
+        .table-responsive
+          %table#datatables2.datatables.table.table-bordered.table-striped{data: { source: customers_path(format: :json) }}
+            %thead
+              %tr
+                %th ID
+                %th First Name
+                %th Last Name
+                %th Address
+                %th Phone Number
+                %th.table-actions
+            %tbody
+            %tfoot
+              %tr
+                %th ID
+                %th First Name
+                %th Last Name
+                %th Address
+                %th Phone Number
+                %th.table-actions

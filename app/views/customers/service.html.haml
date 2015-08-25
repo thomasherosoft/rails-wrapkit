@@ -1,0 +1,91 @@
+%section.content-wrapper
+  - title "Customer Service"
+  = render "shared/header"
+  .content
+    .help-block.text-center
+      = render "customer_tab_row"
+    %hr
+
+    %section.agent-info
+      .row
+        = render 'details'
+
+        = render 'products_table'
+
+    %hr
+
+    %section.overview-stats
+      .row.overview-data
+        .col-xs-3.bordered-right
+          %i.fa.fa-calendar.fa-border.overview-icon.pull-left.icon-blue
+          %h5.overview-large-text.pull-left 184
+          .clearfix
+          %h4.text-muted SERVICE CALLS
+
+        .col-xs-3.bordered-right
+          %i.fa.fa-flag.fa-border.overview-icon.pull-left.icon-red
+
+          %h5.overview-large-text.pull-left 3
+          .clearfix
+          %h4.text-muted COMPLAINTS
+
+        .col-xs-3.bordered-right
+          %i.fa.fa-check.fa-border.overview-icon.pull-left.icon-green
+
+          %h5.overview-large-text.pull-left 184
+          .clearfix
+          %h4.text-muted INSTALLS
+
+        .col-xs-3
+          %i.fa.fa-dot-circle-o.fa-border.overview-icon.pull-left.icon-light-blue
+
+          %h5.overview-large-text.pull-left 61%
+          .clearfix
+          %h4.text-muted INSTALL RATE
+        / /.cols
+        .clearfix
+
+    %hr
+
+    %section.customer-page-table
+      .row
+        .col-md-12
+          %h2.section-header Work order history
+      .row
+        .col-md-12
+          %table.table.customer-page-table
+            %thead
+              %tr
+                %th
+                %th W/O Type
+                %th Date Created
+                %th Date sheduled
+                %th Date Closed
+                %th Status
+                %th Outcome
+            %tbody
+              %tr
+                %td
+                %td INSTALL
+                %td 2014-07-06
+                %td 2014-07-07
+                %td 2014-07-07
+                %td CLOSED
+                %td Install Completed
+              %tr
+                %td
+                %td QA
+                %td 2014-07-06
+                %td 2014-07-07
+                %td 2014-07-07
+                %td.green CLOSED
+                %td Install perfect
+              %tr
+                %td
+                  %i.fa.fa-eye
+                %td SERVICE
+                %td 2014-07-06
+                %td 2014-07-07
+                %td 2014-07-07
+                %td IN PROGRESS
+                %td checking sound

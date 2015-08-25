@@ -1,0 +1,12 @@
+%section.content-wrapper
+  - title "Customer History"
+  = render "shared/header"
+  .content
+    .help-block.text-center
+      = render "customer_tab_row"
+    %hr
+
+    %section.agent-info
+      .row
+        = render 'details'
+        = render 'bill_date_form'

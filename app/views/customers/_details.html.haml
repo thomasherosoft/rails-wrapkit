@@ -1,0 +1,45 @@
+.col-md-6
+  .panel.panel-default.panel-main
+    .panel-body
+      %span.agent-status.pull-right
+        %i.fa.status-icon.fa-border{class: @customer.service_street_number ? "active fa-user" : "fa-user-times" }
+        %p.status-text
+          = @customer.service_street_number ? "active" : "inactive"
+      %h3.panel-h3
+        = @customer.full_name
+      .clearfix
+
+      %address
+        .row
+          .col-md-1.icon-header
+            %i.fa.fa-home
+          .col-md-11
+            = @customer.service_street_number
+            = @customer.service_address
+          .col-md-11
+            = @customer.service_city
+            = @customer.service_province
+            = @customer.service_country
+          .col-md-offset-1.col-md-11
+            = @customer.fi_postal_code
+        %br
+        .row
+          .col-md-1.icon-header
+            %i.fa.fa-tag
+          .col-md-11
+            = @customer.territory
+        .row
+          .col-md-1.icon-header
+            %i.fa.fa-phone
+          .col-md-11
+            = @customer.service_phone
+        .row
+          .col-md-1.icon-header
+            %i.fa.fa-phone
+          .col-md-11
+            = @customer.service_mobile
+        .row
+          .col-md-1.icon-header
+            %i.fa.fa-tag
+          .col-md-11
+            = @customer.service_email

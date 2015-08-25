@@ -1,0 +1,22 @@
+= link_to @ic, class: "btn-call main-button #{'active' if current_page?(independent_contractor_path(@ic))}" do
+  %i.fa.fa-bar-chart-o
+  %br/
+  %span Overview
+= link_to information_independent_contractor_path(@ic), class: "btn-call main-button #{'active' if current_page?(information_independent_contractor_path(@ic))}" do
+  %i.fa.fa-bar-chart-o
+  %br/
+  %span Agent Info
+= link_to stats_independent_contractor_path(@ic), class: "btn-call main-button #{'active' if current_page?(stats_independent_contractor_path(@ic))}" do
+  %span.badge.badge-success
+  %i.fa.fa-bar-chart-o
+  %br/
+  %span Stats
+= link_to payroll_independent_contractor_path(@ic), class: "btn-call main-button #{'active' if current_page?(payroll_independent_contractor_path(@ic))}" do
+  %i.fa.fa-bar-chart-o
+  %br/
+  %span Payroll
+= link_to ongoing_deals_independent_contractor_path(@ic), class: "btn-call main-button #{'active' if current_page?(ongoing_deals_independent_contractor_path(@ic))}" do
+  %span.badge.badge-warning
+  %i.fa.fa-bar-chart-o
+  %br/
+  %span Ongoing Deals

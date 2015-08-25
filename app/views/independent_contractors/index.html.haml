@@ -1,0 +1,31 @@
+%section.content-wrapper
+  - title "Independent Contractors"
+  = render "shared/header"
+  .content
+    .panel-datatable.panel.panel-default
+      .panel-heading
+        .btn-group.text-center.search_by_role
+          %button.btn.btn-default{:type => "button"} Distributor
+          %button.btn.btn-default{:type => "button"} Office Manager
+          %button.btn.btn-default{:type => "button"} Team Lead
+          %button.btn.btn-default{:type => "button"} Agent
+          %button.btn.btn-default{:type => "button"} Recruiter
+          %button.btn.btn-default{:type => "button"} Office Admin
+        .panel-actions-input
+          %button.btn.btn-success{:type => "button", data: {behavior: "add-ic", source: add_independent_contractors_path }}
+            %i.fa.fa-plus
+            NEW I.C.
+      .panel-body
+        .table-responsive
+          %table#independent-contractors.datatables.table.table-bordered.table-striped.table-hover{data: { source: independent_contractors_path(format: :json) }}
+            %thead
+              %tr
+                %th First Name
+                %th Last Name
+                %th Agent #
+                %th IC Type
+                %th Distributorship
+                %th Status
+                %th Date Badged
+                %th.table-actions Actions
+            %tbody.datatable-body

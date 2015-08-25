@@ -1,0 +1,2 @@
+class ProductsController < WebApplicationController
+end
